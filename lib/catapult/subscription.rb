@@ -32,8 +32,7 @@ module Catapult
     # options = {
       #   'birthday-on' => '02/18/1978',
       #   'email' => 'fake@fake.co',
-      #   'gender' => "U",
-      #   'timezone-id' => "1"
+      #   'gender' => "M"
       # }
     def self.update_subscriber(campaign, phone, options = {})
       http, request = build_request("/api/subscription_campaigns/#{campaign}/subscriptions/#{phone}.xml", "PUT")

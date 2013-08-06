@@ -11,7 +11,7 @@ And then execute:
 
     $ bundle
 
-Finally, add this to any of your initliazation files
+Finally, add this to one of your initliazation files
 
     Catapult.username = "c@apult.com"
     Catapult.password = "MyShinyPassword"
@@ -27,10 +27,10 @@ For example under the subscription section we have a create subscription method.
 
 Finished:
 
-* list_subscribers(campaign)
-* create_subscription(campaign, phone)
-* delete_subscriber(campaign, phone, suppress_message)
-* update_subscriber(campaign, phone, opts = {})
+* Subscription.list_subscribers(campaign)
+* Subscription.create_subscription(campaign, phone)
+* Subscription.delete_subscriber(campaign, phone, suppress_message)
+* Subscription.update_subscriber(campaign, phone, opts = {})
 
 
 
