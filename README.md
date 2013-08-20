@@ -32,9 +32,9 @@ Finished:
 * Subscription.create_subscription(campaign, phone)
 * Subscription.read_subscription(campaign, phone)
 * Subscription.delete_subscriber(campaign, phone, suppress_message=false)
-* Subscription.update_subscriber(campaign, phone, opts = {})  *
+* Subscription.update_subscriber(campaign, phone, opts = {})
 
- *opts here mirrors the api also: {"first-name" => "Lisbeth"}
+opts here mirrors the api also: {"first-name" => "Lisbeth"}
 
 
 ## Usage
