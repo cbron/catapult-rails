@@ -27,12 +27,12 @@ For example under the subscription section we have a create_subscription method.
 
 Finished:
 
+* Campaign.list_campaigns(account_list=nil, status_filter=nil, type_filter=nil)
 * Subscription.list_subscribers(campaign)
 * Subscription.create_subscription(campaign, phone)
 * Subscription.read_subscription(campaign, phone)
 * Subscription.delete_subscriber(campaign, phone, suppress_message=false)
 * Subscription.update_subscriber(campaign, phone, opts = {})  *
-* Campaign.list_campaigns(account_list=nil, status_filter=nil, type_filter=nil)
 
  *opts here mirrors the api also: {"first-name" => "Lisbeth"}
 
@@ -60,6 +60,7 @@ Create a subscription:
     => true
 
 Update a subscription:
+
 As far as I can tell this does not create a subscription even though the docs imply that it does
 
     Catapult::Subscription.update_subscriber(campaign_id, phone_number, options)
