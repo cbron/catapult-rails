@@ -21,7 +21,7 @@ module Catapult
     end
 
     def handle_response(response)
-      if response.code.to_i == 200
+      if response.code.to_i == 200 && response.body.blank?
         return true
       else
         return Hash.from_xml(response.body)

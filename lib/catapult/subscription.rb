@@ -8,6 +8,10 @@ module Catapult
       Hash.from_xml(response.body)
     end
 
+    # returns:
+    #  true on success
+    #  hash on false
+    #
     def self.create_subscription(campaign, phone)
       http, request = build_request("/api/subscription_campaigns/#{campaign}/subscriptions.xml", "POST")
       xml = Nokogiri::XML::Builder.new do |x|
@@ -22,7 +26,20 @@ module Catapult
       handle_response(response)
     end
 
+    # returns:
+    #  true on success
+    #  hash on false
+    #
+    def self.read_subscription(campaign, phone)
+      http, request = build_request("/api/subscription_campaigns/#{campaign}/subscriptions/#{phone}.xml", "GET")
+      response = http.request(request)
+      handle_response(response)
+    end
 
+    # returns:
+    #  true on success
+    #  hash on false
+    #
     def self.delete_subscriber(campaign, phone, suppress_message = false)
       http, request = build_request("/api/subscription_campaigns/#{campaign}/subscriptions/#{phone}.xml?suppress_message=#{suppress_message}", "DELETE")
       response = http.request(request)
@@ -30,10 +47,10 @@ module Catapult
     end
 
     # options = {
-      #   'birthday-on' => '02/18/1978',
-      #   'email' => 'fake@fake.co',
-      #   'gender' => "M"
-      # }
+    #   'birthday-on' => '02/18/1978',
+    #   'email' => 'fake@fake.co',
+    #   'gender' => "M"
+    # }
     def self.update_subscriber(campaign, phone, options = {})
       http, request = build_request("/api/subscription_campaigns/#{campaign}/subscriptions/#{phone}.xml", "PUT")
       xml = Nokogiri::XML::Builder.new do |x|
