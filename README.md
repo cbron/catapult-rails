@@ -34,7 +34,7 @@ Finished:
 * Subscription.delete_subscriber(campaign, phone, suppress_message=false)
 * Subscription.update_subscriber(campaign, phone, opts = {})
 
-opts here mirrors the api also: {"first-name" => "Lisbeth"}
+opts in the update_subscriber call mirrors the api as well: {"first-name" => "Lisbeth"}
 
 
 ## Usage
